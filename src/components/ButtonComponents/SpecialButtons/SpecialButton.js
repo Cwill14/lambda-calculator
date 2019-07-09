@@ -8,7 +8,7 @@ const SpecialButton = props => {
       <button 
         className="specialButton"
         // onClick={() => {props.setSpecials()}}
-        >{props.specials}
+        >{props.special}
       </button>
     </>
   );
