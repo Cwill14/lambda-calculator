@@ -5,8 +5,7 @@ const NumberButton = props => {
     <>
       <button 
         className="numberButton"
-        // onClick={() => (props.setNumbers)}
-        onClick={() => {props.setFirstNumber(props.number)}}
+        onClick={() => {props.addInput(props.number)}}
         >{props.number}
       </button>
     </>

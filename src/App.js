@@ -17,19 +17,27 @@ function App() {
   // Your functions should accept a parameter of the the item data being displayed to the DOM (ie - should recieve 5 if the user clicks on
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
- const [firstNumber, setFirstNumber] = useState(0); 
+ const [firstNumber, setFirstNumber] = useState(""); 
  const [operation, setOperation] = useState();
  const [secondNumber, setSecondNumber] = useState(0);
  const [totalResult , setTotalResult] = useState(0); 
+ const [summary, setSummary] = useState("")
 
+const addInput = newNumber => {
+    setFirstNumber(firstNumber + newNumber);
+    console.log(firstNumber);
+    console.log(newNumber);
+  }
+
+// setSummary(() => {summary + firstNumber})
   // getTotal = () => {
   //   setTotalResult:
   // } 
-  const clearDisplay = () => {
-    setTotalResult(0);
-  }
+  // const clearDisplay = () => {
+  //   setTotalResult(0);
+  // }
 
-  // const inputFirstNum = num => {
+  // const getFirstNum = num => {
   //   setFirstNumber(firstNumber)
   // }
 
@@ -45,7 +53,7 @@ function App() {
           secondNumber={secondNumber}
         />
         <Specials  className="border" />
-        <Numbers setFirstNumber={setFirstNumber} className="border" />
+        <Numbers addInput={addInput} className="border" />
         <Operators  className="border" setOperation={setOperation} />
       </div>
     </div>

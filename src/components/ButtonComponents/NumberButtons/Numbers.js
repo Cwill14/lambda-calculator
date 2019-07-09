@@ -13,7 +13,7 @@ const Numbers = props => {
   return (
     <div>
        {numbersList.map(eachNumber => {
-         return <NumberButton number={eachNumber} setNumbers={setNumbers} setFirstNumber={props.setFirstNumber} />
+         return <NumberButton number={eachNumber} addInput={props.addInput} setFirstNumber={props.setFirstNumber} />
        })}
     </div>
   );
