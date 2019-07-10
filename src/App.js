@@ -30,45 +30,29 @@ function App() {
     setFirstNumber(firstNumber + newNumber);
   }
   const addOperator = newOperator => {
-    if(newOperator === 0) {
+    if(newOperator === "=") {
       setTotalResult(eval(`${firstNumber} ${operation} ${secondNumber} `))
     }
     setOperation(newOperator);
     // if(newOperator ===){
 
-
     // }
   }
   
-
-  
-// setSummary(() => {summary + firstNumber})
-  // getTotal = () => {
-  //   setTotalResult:
-  // } 
-  // const clearDisplay = () => {
-  //   setTotalResult(0);
-  // }
-
-  // const getFirstNum = num => {
-  //   setFirstNumber(firstNumber)
-  // }
-
   return (
     <div className="container">
       <Logo />
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display  
-          className="border" 
           totalResult={totalResult}
           firstNumber={firstNumber}
           operator={operation}
           secondNumber={secondNumber}
         />
-        <Specials  className="border" />
-        <Numbers addInput={addInput} className="border" />
-        <Operators  className="border" addOperator={addOperator} />
+        <Specials />
+        <Numbers addInput={addInput} />
+        <Operators addOperator={addOperator} />
       </div>
     </div>
   );

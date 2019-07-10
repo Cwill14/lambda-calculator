@@ -4,7 +4,7 @@ const NumberButton = props => {
   return (
     <>
       <button 
-        className="numberButton"
+        className="button numberButton"
         onClick={() => {props.addInput(props.number)}}
         >{props.number}
       </button>
