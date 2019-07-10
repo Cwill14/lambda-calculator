@@ -5,8 +5,11 @@ const OperatorButton = props => {
     <>
       <button
         className="operatorButton"
-        // onClick={() => {props.setOperators}}
-        >{props.operator.char}
+        onClick={() => {
+          props.addOperator(props.operator.value);
+        }}
+      >
+      {props.operator.char}
       </button>
     </>
   );

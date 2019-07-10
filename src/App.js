@@ -18,17 +18,30 @@ function App() {
   // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
   // Don't forget to pass the functions (and any additional data needed) to the components as props
  const [firstNumber, setFirstNumber] = useState(""); 
- const [operation, setOperation] = useState();
- const [secondNumber, setSecondNumber] = useState(0);
- const [totalResult , setTotalResult] = useState(0); 
- const [summary, setSummary] = useState("")
+ const [operation, setOperation] = useState("");
+ const [secondNumber, setSecondNumber] = useState("");
+ const [totalResult , setTotalResult] = useState(""); 
 
-const addInput = newNumber => {
+  const addInput = newNumber => {
+    if(operation !== "") {
+       setSecondNumber(secondNumber + newNumber)
+       return
+    }
     setFirstNumber(firstNumber + newNumber);
-    console.log(firstNumber);
-    console.log(newNumber);
   }
+  const addOperator = newOperator => {
+    if(newOperator === 0) {
+      setTotalResult(eval(`${firstNumber} ${operation} ${secondNumber} `))
+    }
+    setOperation(newOperator);
+    // if(newOperator ===){
 
+
+    // }
+  }
+  
+
+  
 // setSummary(() => {summary + firstNumber})
   // getTotal = () => {
   //   setTotalResult:
@@ -48,13 +61,14 @@ const addInput = newNumber => {
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display  
           className="border" 
-          setTotalResult={totalResult}
+          totalResult={totalResult}
           firstNumber={firstNumber}
+          operator={operation}
           secondNumber={secondNumber}
         />
         <Specials  className="border" />
         <Numbers addInput={addInput} className="border" />
-        <Operators  className="border" setOperation={setOperation} />
+        <Operators  className="border" addOperator={addOperator} />
       </div>
     </div>
   );
