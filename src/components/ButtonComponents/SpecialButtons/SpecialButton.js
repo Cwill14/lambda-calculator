@@ -4,11 +4,19 @@ import React from "react";
 const SpecialButton = props => {
   return (
     <>
-      <button 
-        className="button specialButton"
-        // onClick={() => {props.setSpecials()}}
-        >{props.special}
-      </button>
+      {props.special === "C" ?
+        <button 
+          className="button specialButton"
+          onClick={() => {
+            props.setFirstNumber("")
+            props.setOperation("")
+            props.setSecondNumber("")
+            props.setTotalResult("")
+          }}
+          >{props.special}
+        </button> :
+        <button className="button specialButton">{props.special}</button>
+      }
     </>
   );
 };

@@ -36,6 +36,7 @@ function App() {
     setOperation(newOperator);
   }
 
+
   
   return (
     <div className="container">
@@ -47,7 +48,12 @@ function App() {
           operator={operation}
           secondNumber={secondNumber}
         />
-        <Specials />
+        <Specials 
+          setFirstNumber={setFirstNumber}
+          setOperation={setOperation}
+          setSecondNumber={setSecondNumber}
+          setTotalResult={setTotalResult}  
+        />
         <Numbers className="numbers" addInput={addInput} />
         <Operators className="operators" addOperator={addOperator} />
       </div>
