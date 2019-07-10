@@ -34,16 +34,13 @@ function App() {
       setTotalResult(eval(`${firstNumber} ${operation} ${secondNumber} `))
     }
     setOperation(newOperator);
-    // if(newOperator ===){
-
-    // }
   }
+
   
   return (
     <div className="container">
       <Logo />
       <div className="App">
-        {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display  
           totalResult={totalResult}
           firstNumber={firstNumber}
@@ -51,8 +48,8 @@ function App() {
           secondNumber={secondNumber}
         />
         <Specials />
-        <Numbers addInput={addInput} />
-        <Operators addOperator={addOperator} />
+        <Numbers className="numbers" addInput={addInput} />
+        <Operators className="operators" addOperator={addOperator} />
       </div>
     </div>
   );

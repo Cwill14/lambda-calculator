@@ -6,14 +6,17 @@ import SpecialButton from "./SpecialButton";
 import { specials } from "../../../data";
 
 const Specials = () => {
-  // STEP 2 - add the imported data to state
   const [specialsList, setSpecials] = useState(specials);
-  console.log("specials: ", specials);
 
   return (
     <div>
        {specialsList.map(eachSpecial => {
-         return <SpecialButton special={eachSpecial} setSpecials={setSpecials} />
+         return <SpecialButton 
+          className="special"
+          special={eachSpecial} 
+          setSpecials={setSpecials}
+          key={eachSpecial}
+        />
        })}
     </div>
   );

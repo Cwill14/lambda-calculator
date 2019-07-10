@@ -6,14 +6,18 @@ import NumberButton from "./NumberButton";
 import { numbers } from "../../../data";
 
 const Numbers = props => {
-  // STEP 2 - add the imported data to state
   const [numbersList, setNumbers] = useState(numbers);
-  console.log("numbers: ", numbers);
 
   return (
     <div>
        {numbersList.map(eachNumber => {
-         return <NumberButton number={eachNumber} addInput={props.addInput} setFirstNumber={props.setFirstNumber} />
+         return <NumberButton 
+          className="number"
+          number={eachNumber} 
+          addInput={props.addInput} 
+          setFirstNumber={props.setFirstNumber}
+          key={eachNumber}
+        />
        })}
     </div>
   );
